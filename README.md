@@ -1,0 +1,1 @@
+This is Crypto Crawler: a near-real time crypto currency monitoring service which aims to help notify users when large market fluctuations are about to occur.
