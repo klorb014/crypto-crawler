@@ -1,0 +1,155 @@
+{
+    "id": null,
+    "uid": "cLV5GDCkz",
+    "title": "Crypto Crawler",
+    "tags": [],
+    "style": "dark",
+    "timezone": "browser",
+    "editable": true,
+    "hideControls": false,
+    "graphTooltip": 1,
+    "panels": [
+        {
+            "type": "graph",
+            "title": "Bitcoin Price",
+            "gridPos": {
+                "x": 0,
+                "y": 0,
+                "w": 12,
+                "h": 9
+            },
+            "id": 2,
+            "targets": [
+                {
+                    "refId": "A",
+                    "format": "time_series",
+                    "timeColumn": "\"timestamp\"",
+                    "metricColumn": "none",
+                    "group": [],
+                    "where": [
+                        {
+                            "type": "macro",
+                            "name": "$__timeFilter",
+                            "params": []
+                        },
+                        {
+                            "type": "expression",
+                            "datatype": "varchar",
+                            "name": "",
+                            "params": [
+                                "crypto",
+                                "=",
+                                "'BTC'"
+                            ]
+                        }
+                    ],
+                    "select": [
+                        [
+                            {
+                                "type": "column",
+                                "params": [
+                                    "price"
+                                ]
+                            }
+                        ]
+                    ],
+                    "rawQuery": false,
+                    "rawSql": "SELECT\n  \"timestamp\" AS \"time\",\n  price\nFROM prices\nWHERE\n  $__timeFilter(\"timestamp\") AND\n  crypto = 'BTC'\nORDER BY 1",
+                    "table": "prices",
+                    "timeColumnType": "timestamp"
+                }
+            ],
+            "datasource": "Crypto Crawler",
+            "fieldConfig": {
+                "defaults": {
+                    "custom": {}
+                },
+                "overrides": []
+            },
+            "pluginVersion": "7.1.5",
+            "renderer": "flot",
+            "yaxes": [
+                {
+                    "label": null,
+                    "show": true,
+                    "logBase": 1,
+                    "min": null,
+                    "max": null,
+                    "format": "short"
+                },
+                {
+                    "label": null,
+                    "show": true,
+                    "logBase": 1,
+                    "min": null,
+                    "max": null,
+                    "format": "short"
+                }
+            ],
+            "xaxis": {
+                "show": true,
+                "mode": "time",
+                "name": null,
+                "values": [],
+                "buckets": null
+            },
+            "yaxis": {
+                "align": false,
+                "alignLevel": null
+            },
+            "lines": true,
+            "fill": 1,
+            "linewidth": 1,
+            "dashLength": 10,
+            "spaceLength": 10,
+            "pointradius": 2,
+            "legend": {
+                "show": true,
+                "values": false,
+                "min": false,
+                "max": false,
+                "current": false,
+                "total": false,
+                "avg": false
+            },
+            "nullPointMode": "null",
+            "tooltip": {
+                "value_type": "individual",
+                "shared": true,
+                "sort": 0
+            },
+            "aliasColors": {},
+            "seriesOverrides": [],
+            "thresholds": [],
+            "timeRegions": [],
+            "fillGradient": 0,
+            "dashes": false,
+            "hiddenSeries": false,
+            "points": false,
+            "bars": false,
+            "stack": false,
+            "percentage": false,
+            "steppedLine": false,
+            "timeFrom": null,
+            "timeShift": null
+        }
+    ],
+    "time": {
+        "from": "now-6h",
+        "to": "now"
+    },
+    "timepicker": {
+        "time_options": [],
+        "refresh_intervals": []
+    },
+    "templating": {
+        "list": []
+    },
+    "annotations": {
+        "list": []
+    },
+    "refresh": "5s",
+    "schemaVersion": 17,
+    "version": 0,
+    "links": []
+}

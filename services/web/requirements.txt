@@ -1,0 +1,7 @@
+APScheduler
+requests
+PyYAML
+Flask==1.1.2
+Flask-SQLAlchemy==2.5.1
+Flask-Script==2.0.6
+psycopg2
