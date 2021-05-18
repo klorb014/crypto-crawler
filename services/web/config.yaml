@@ -1,0 +1,11 @@
+api:
+  url: "https://api.nomics.com/v1/currencies/ticker?"
+  key: "INSERT NOMICS KEY"
+  crypto:
+    - "BTC"
+    - "ETH"
+    - "XRP"
+  interval: "1d"
+email:
+  user: "INSERT EMAIL"
+  password: "INSERT PASSWORD"
